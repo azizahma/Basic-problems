@@ -9,7 +9,6 @@ def cond_loop(a,b) :
             a = a + 2
         else :
             a = a + 1
-    #print(val)
     print(sum(val))
 
 cond_loop(4603, 8843) # works for any even odd pairs of numbers
