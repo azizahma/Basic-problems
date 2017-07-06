@@ -9,5 +9,6 @@ http://rosalind.info/users/azizahma/
 5. Conditions and loops - cond_loop.py
 6. Dictionaries - dict_ss.py
 7. Transcribing (from DNA to RNA) - transcribe.py
+8. Working with files - working_w_files.py
 
 This repository is for my own reference.
