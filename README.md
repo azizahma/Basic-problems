@@ -10,5 +10,7 @@ http://rosalind.info/users/azizahma/
 6. Dictionaries - dict_ss.py
 7. Transcribing (from DNA to RNA) - transcribe.py
 8. Working with files - working_w_files.py
+9. Rabbits and Recurrence Relations - rabbit_recurrence.py
 
-This repository is for my own reference.
+This repository is for my own reference. 
+Please let me know (azizah_ma@yahoo.co.uk) if you find that the solutions here are useful!
