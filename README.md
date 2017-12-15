@@ -13,4 +13,4 @@ http://rosalind.info/users/azizahma/
 9. Rabbits and Recurrence Relations - rabbit_recurrence.py
 
 This repository is for my own reference. 
-Please let me know (azizah_ma@yahoo.co.uk) if you find that the solutions here are useful!
+Please let me know (azizah_ma@yahoo.co.uk) if you find that the solutions here useful!
