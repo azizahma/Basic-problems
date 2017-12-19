@@ -12,6 +12,7 @@ http://rosalind.info/users/azizahma/
 8. Working with files - working_w_files.py
 9. Rabbits and Recurrence Relations - rabbit_recurrence.py
 10. Identifying Unknown DNA Quickly - GC-content.py
+11. Introduction to Mendelian Inheritance - mendel.py
 
 This repository is for my own reference. 
 Please let me know (azizah_ma@yahoo.co.uk) if you find that the solutions here useful!
