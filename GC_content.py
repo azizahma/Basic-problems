@@ -2,6 +2,7 @@ from decimal import *
 import numpy as np
 
 def GC_content(file):
+    '''The ID of the string having the highest GC-content, followed by the GC-content of that string. Rosalind allows for a default error of 0.001 in all decimal answers unless otherwise stated; please see the note on absolute error below'''
     getcontext().prec = 28
     with open(file) as f:
         fr = f.read()
