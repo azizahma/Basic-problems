@@ -1,4 +1,4 @@
-May 2017 - Dec 2017
+May 2017 - Present
 This is a collection of Python functions - based on my own work solving some 'basic' Rosalind's Problems - my account:
 http://rosalind.info/users/azizahma/
 
