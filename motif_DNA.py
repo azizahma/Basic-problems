@@ -1,4 +1,5 @@
 def motif_DNA(file):
+    '''All locations of tt as a substring of ss.'''
     with open(file) as f:
         for idx,line in enumerate(iter(f)):
             if idx+1 == 1:
