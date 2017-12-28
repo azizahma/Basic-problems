@@ -16,6 +16,7 @@ http://rosalind.info/users/azizahma/
 12. Translating RNA into Protein - genetic_code.py
 13. Finding a Motif in DNA - motif_DNA.py
 14. Finding a Most Likely Common Ancestor - consensus_profile2.py
+15. Mortal Fibonacci Rabbits - mortal_fibo_rabbit.py
 
 This repository is for my own reference. 
 Please let me know (azizah_ma@yahoo.co.uk) if you find that the solutions here useful!
