@@ -20,4 +20,4 @@ http://rosalind.info/users/azizahma/
 18. Identifying Unknown DNA Quickly - GC_content2.py
 
 This repository is for my own reference. 
-Please let me know (azizah_ma@yahoo.co.uk) if you find that the solutions here useful!
+Please let me know (azizah_ma@yahoo.co.uk) if you find the solutions here useful!
