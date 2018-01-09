@@ -1,5 +1,5 @@
 May 2017 - Present
-This is a collection of Python functions - based on my own work solving some 'basic' Rosalind's Problems - my account:
+This is a collection of Python scripts - based on my own works solving Bioinformatics Stronghold Rosalind's Problems - my account:
 http://rosalind.info/users/azizahma/
 
 1. Counting DNA nucleotides - countaa.py
