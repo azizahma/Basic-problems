@@ -21,5 +21,4 @@ http://rosalind.info/users/azizahma/
 19. Finding DNA strings that share some properties: returning the adjacency list corresponding to O(k) - overlap_graphs.py
 20. Averaging a random process - avg_rand_process.py
 
-This repository is for my own reference. 
-Please let me know (azizah_ma@yahoo.co.uk) if you find the solutions here useful!
+This repository is for my own reference.
