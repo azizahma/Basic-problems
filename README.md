@@ -20,5 +20,6 @@ http://rosalind.info/users/azizahma/
 18. Identifying Unknown DNA Quickly - GC_content2.py
 19. Finding DNA strings that share some properties: returning the adjacency list corresponding to O(k) - overlap_graphs.py
 20. Averaging a random process - avg_rand_process.py
+21. Searching a motif in DNA strings - searching_motif_DNA.py
 
 This repository is for my own reference.
