@@ -21,5 +21,6 @@ http://rosalind.info/users/azizahma/
 19. Finding DNA strings that share some properties: returning the adjacency list corresponding to O(k) - overlap_graphs.py
 20. Averaging a random process - avg_rand_process.py
 21. Searching a motif in DNA strings - searching_motif_DNA.py
+22. Solving problem of 'Independent Alleles' - mendel_second.py
 
 This repository is for my own reference.
