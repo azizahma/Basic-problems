@@ -1,6 +1,6 @@
 #Finding a protein motif - from a list of uniport_id, obtain complete description and features of each (from UniProt site)
 #For each protein possessing the N-glycosylation motif, output the access ID following a list of locations in the protein strings where the motif can be found
-
+#For each protein possessing the N-glycosylation motif, output its given access ID followed by a list of locations in the protein string where the motif can be found.
 
 link = 'http://www.uniprot.org/uniprot/'
 from urllib.request import urlretrieve #urllib & Requests libraries to automate file download in Python
