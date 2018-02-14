@@ -25,5 +25,6 @@ http://rosalind.info/users/azizahma/
 23. Finding a protein motif - motif_implies_function.py
 24. Inferring mRNA from Protein - reverse_translation.py
 25. Transcription May Begin Anywhere - open reading frame - ORF2.py
+26. Rearrangements Power Large-Scale Genomic Changes - Enumerating Gene Orders - gene_orders.py
 
 This repository is for my own reference.
