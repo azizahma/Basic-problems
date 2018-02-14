@@ -26,5 +26,6 @@ http://rosalind.info/users/azizahma/
 24. Inferring mRNA from Protein - reverse_translation.py
 25. Transcription May Begin Anywhere - open reading frame - ORF2.py
 26. Rearrangements Power Large-Scale Genomic Changes - Enumerating Gene Orders - gene_orders.py
+27. Calculating Protein Mass - Chaining the Amino Acids - protein_mass.py
 
 This repository is for my own reference.
