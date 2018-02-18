@@ -29,5 +29,6 @@ http://rosalind.info/users/azizahma/
 27. Calculating Protein Mass - Chaining the Amino Acids - protein_mass.py
 28. Locating Restriction Sites - The Billion-Year War - restriction_sites.py
 29. RNA Splicing - Genes are Discontiguous - RNA_splicing.py
+30. Enumerating k-mers Lexicographically - organizing_strings.py
 
 This repository is for my own reference.
