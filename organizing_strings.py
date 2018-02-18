@@ -3,6 +3,7 @@
 import re
 import itertools
 def enumerate_k_mers(file):
+    '''All strings of length nn that can be formed from the alphabet, ordered lexicographically (use the standard order of symbols in the English alphabet).'''
     with open(file) as f:
         info = ' '.join(line.strip() for line in f)
         alphabet = re.findall('[A-Z]',info)
