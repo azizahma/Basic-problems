@@ -1,4 +1,4 @@
-#Longest increasing subsequence - a simple measure of gene order similarity
+#Longest increasing/decreasing subsequence - a simple measure of gene order similarity
 #To search for the longest collection of genes that are formed in the same order in both chromosomes
 import itertools
 def longest_subsequence(file):
