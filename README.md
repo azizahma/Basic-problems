@@ -6,7 +6,7 @@ http://rosalind.info/users/azizahma/
 2. Counting point mutation - hamming.py
 3. Strings and lists - string_list.py, strings_lists.py
 4. Variables and some arithmetic - var_arithmetic.py, var_arith.py
-5. Conditions and loops - cond_loop.py
+5. Conditions and loops - cond_loop.py, conditions_loops.py
 6. Dictionaries - dict_ss.py
 7. Transcribing (from DNA to RNA) - transcribe.py
 8. Working with files - working_w_files.py
