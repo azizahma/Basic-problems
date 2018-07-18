@@ -1,6 +1,7 @@
 May 2017 - Present
 This is a collection of Python scripts - based on my own solutions working through Bioinformatics Stronghold Rosalind's Problems - my account:
 http://rosalind.info/users/azizahma/
+This repository is for my own reference.
 
 1. Counting DNA nucleotides - countaa.py
 2. Counting point mutation - hamming.py
@@ -31,4 +32,7 @@ http://rosalind.info/users/azizahma/
 29. RNA Splicing - Genes are Discontiguous - RNA_splicing.py
 30. Enumerating k-mers Lexicographically - organizing_strings.py
 
-This repository is for my own reference.
+Other interesting problems:
+1. Latest version (of eg. Opera version by directory name) - latestoperaversion.py
+
+
