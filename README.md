@@ -3,7 +3,7 @@ This is a collection of Python scripts - based on my own solutions working throu
 http://rosalind.info/users/azizahma/
 This repository is for my own reference.
 
-1. Counting DNA nucleotides - countaa.py
+1. Counting DNA nucleotides - countaa.py, counting_DNA_nucleotides.py
 2. Counting point mutation - hamming.py
 3. Strings and lists - string_list.py, strings_lists.py
 4. Variables and some arithmetic - var_arithmetic.py, var_arith.py
