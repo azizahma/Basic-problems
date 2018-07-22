@@ -10,9 +10,9 @@ This repository is for my own reference.
 5. Conditions and loops - cond_loop.py, conditions_loops.py
 6. Dictionaries - dict_ss.py, dictionariess.py
 7. Transcribing (from DNA to RNA) - transcribe.py, transcribe2.py
-7b. Complementing a strand of DNA - reverse_complement.py, rev_comp.py
+7b. Complementing a strand of DNA - reverse_complement.py, reverse_complement2.py, reverse_complement3.py 
 8. Working with files - working_w_files.py, working_with_files.py
-9. Rabbits and Recurrence Relations - rabbit_recurrence.py
+9. Rabbits and Recurrence Relations - rabbit_recurrence.py, wascally_wabbits.py
 10. Identifying Unknown DNA Quickly - GC-content.py
 11. Introduction to Mendelian Inheritance - mendel.py
 12. Translating RNA into Protein - genetic_code.py
