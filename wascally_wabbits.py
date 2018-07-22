@@ -15,7 +15,7 @@ def recurrence_relation(x,y):
     
     """
     if x not in memo:
-        memo[x] = recurrence_relation((x-1), y) + k*recurrence_relation((x-2),y) # Fn = F(n-1)+F(n-2)
+        memo[x] = recurrence_relation((x-1), y) + y*recurrence_relation((x-2),y) # Fn = F(n-1)+F(n-2)
     return memo[x]
 
 print(recurrence_relation(n,k))
