@@ -19,7 +19,7 @@ This repository is for my own reference.
 13. Finding a Motif in DNA - motif_DNA.py
 14. Finding a Most Likely Common Ancestor - consensus_profile2.py
 15. Mortal Fibonacci Rabbits - mortal_fibo_rabbit.py
-18. Identifying Unknown DNA Quickly - GC_content2.py
+18. Identifying Unknown DNA Quickly - GC_content.py, GC_content2.py, computing_GC_content.py
 19. Finding DNA strings that share some properties: returning the adjacency list corresponding to O(k) - overlap_graphs.py
 20. Averaging a random process - avg_rand_process.py
 21. Searching a motif in DNA strings - searching_motif_DNA.py
