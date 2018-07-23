@@ -13,7 +13,6 @@ This repository is for my own reference.
 7b. Complementing a strand of DNA - reverse_complement.py, reverse_complement2.py, reverse_complement3.py 
 8. Working with files - working_w_files.py, working_with_files.py
 9. Rabbits and Recurrence Relations - rabbit_recurrence.py, wascally_wabbits.py
-10. Identifying Unknown DNA Quickly - GC-content.py
 11. Introduction to Mendelian Inheritance - mendel.py
 12. Translating RNA into Protein - genetic_code.py
 13. Finding a Motif in DNA - motif_DNA.py
