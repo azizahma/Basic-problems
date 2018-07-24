@@ -17,20 +17,17 @@ def mendel1(k, m, n):
     a dominant allele (and thus displaying the dominant phenotype). Assume that any two organisms can mate.
     """
     pop = k*['AA'] + m*['Aa'] + n*['aa']
+    print(pop)
 
     population = []
-    for i in range(10000):
+    for i in range(1000000):
         pop2 = [random.choice(x) for x in random.sample(pop, 2)]
         pop2 = ''.join(pop2)
         population.append(pop2)
 
-    print(1 - (population.count('aa')/10000))
+    print(1 - (population.count('aa')/1000000))
 
 mendel1(k,m,n)
-
-
-
-
 
 
 
