@@ -14,7 +14,7 @@ This repository is for my own reference.
 9. Working with files - working_w_files.py, working_with_files.py
 10. Rabbits and Recurrence Relations - rabbit_recurrence.py, wascally_wabbits.py
 11. Introduction to Mendelian Inheritance - mendel.py, mendel1.py
-12. Translating RNA into Protein - genetic_code.py
+12. Translating RNA into Protein - genetic_code.py, translate_RNA_protein.py
 13. Finding a Motif in DNA - motif_DNA.py
 14. Finding a Most Likely Common Ancestor - consensus_profile2.py
 15. Mortal Fibonacci Rabbits - mortal_fibo_rabbit.py
