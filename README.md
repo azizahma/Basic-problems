@@ -17,7 +17,7 @@ This repository is for my own reference.
 12. Translating RNA into Protein - genetic_code.py, translate_RNA_protein.py
 13. Finding a Motif in DNA - motif_DNA.py, motif_DNA2.py
 14. Finding a Most Likely Common Ancestor - consensus_profile2.py, consensus_profile.py, consensus_profile_xx.py, consensus_profile_x.py
-15. Mortal Fibonacci Rabbits - mortal_fibo_rabbit.py
+15. Mortal Fibonacci Rabbits - mortal_fibo_rabbit.py, wabbit_season.py
 18. Identifying Unknown DNA Quickly - GC_content.py, GC_content2.py, computing_GC_content.py
 19. Finding DNA strings that share some properties: returning the adjacency list corresponding to O(k) - overlap_graphs.py
 20. Averaging a random process - avg_rand_process.py
