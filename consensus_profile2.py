@@ -41,4 +41,4 @@ def consensus_profile2(file):
         nlis2 = [int(x) for x in nlis]
         print(m+': '+' '.join(map(str, nlis2)))
 
-consensus_profile2('file')
+consensus_profile2('rosalind_cons.txt')
