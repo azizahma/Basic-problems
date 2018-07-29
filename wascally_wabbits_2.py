@@ -17,8 +17,6 @@ def fibo(n,k):
     f = [1] * n
     for i in range(2, n):
         f[i] = f[i-1] + k* f[i-2]
-        f.append(f[i])
-
     print(f[-1])
 
 fibo(n,k)
