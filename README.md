@@ -12,7 +12,7 @@ This repository is for my own reference.
 7. Transcribing (from DNA to RNA) - transcribe.py, transcribe2.py
 8. Complementing a strand of DNA - reverse_complement.py, reverse_complement2.py, reverse_complement3.py 
 9. Working with files - working_w_files.py, working_with_files.py
-10. Rabbits and Recurrence Relations - rabbit_recurrence.py, wascally_wabbits.py
+10. Rabbits and Recurrence Relations - rabbit_recurrence.py, wascally_wabbits.py, wascally_wabbits_2.py
 11. Introduction to Mendelian Inheritance - mendel.py, mendel1.py
 12. Translating RNA into Protein - genetic_code.py, translate_RNA_protein.py
 13. Finding a Motif in DNA - motif_DNA.py, motif_DNA2.py
