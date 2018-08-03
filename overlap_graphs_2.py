@@ -1,6 +1,7 @@
-#Overlap Graphs - O3
+#Overlap Graphs - O3 - still not working
 
 import itertools # to use combinations
+
 def overlap_graphs_3(file):
     """
     Given: A collection of DNA strings in FASTA format having total length at most 10 kbp.
@@ -14,17 +15,17 @@ def overlap_graphs_3(file):
         d2 = [x[13:] for x in d]
         comb = list(itertools.combinations(d1, 2))
         dct = dict(list(zip(d1, d2)))
-
+        #e = []
         for x in comb:
             r1, r2 = x
             s1 = ''.join([v for k, v in dct.items() if r1 == k])
             s2 = ''.join([v for k, v in dct.items() if r2 == k])
-            if s1[::-1][:3] == s2[:3]:
-                print(' '.join(x))
-            elif s2[::-1][:3] == s1[:3]:
-                print(' '.join(x))
+
+            if s1[-3:] == s2[:3]:
+                print(' '.join((r1,r2)))
+
+            if s2[-3:] == s1[:3]:
+                print(' '.join((r2,r1)))
 
 overlap_graphs_3('rosalind_grph.txt')
-
-
-overlap_graphs_3('input')
+#overlap_graphs_3('input')
