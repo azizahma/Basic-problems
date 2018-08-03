@@ -21,7 +21,7 @@ This repository is for my own reference.
 18. Identifying Unknown DNA Quickly - GC_content.py, GC_content2.py, computing_GC_content.py
 19. Finding DNA strings that share some properties: returning the adjacency list corresponding to O(k) - overlap_graphs.py, overlap_graphs_2.py, graphs.py
 20. Averaging a random process - avg_rand_process.py, averages.py
-21. Searching a motif in DNA strings - searching_motif_DNA.py
+21. Searching a motif in DNA strings - searching_motif_DNA.py, longest_common_substring.py
 22. Solving problem of 'Independent Alleles' - mendel_second.py
 23. Finding a protein motif - motif_implies_function.py
 24. Inferring mRNA from Protein - reverse_translation.py
