@@ -9,10 +9,14 @@ def longest_common_sub(file):
         other_seq = [ x for x in d if x != shortest_seq ]
 
         # what is the longest sub sequence that is common in all other sequences
-        for x in other_seq:
-            for i in range(len(x)):
-                print(x[])
-
+        for i in range(shortest_len,0,-1):
+            sub = shortest_seq[:i]
+            print(sub)
+            for x in other_seq:
+                print(i,x)
+                if x[:i] == sub:
+                    print(sub)
+                    break
 
 longest_common_sub('input')
 
