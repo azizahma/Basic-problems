@@ -23,7 +23,7 @@ This repository is for my own reference.
 20. Averaging a random process - avg_rand_process.py, averages.py
 21. Searching a motif in DNA strings - searching_motif_DNA.py, longest_common_substring.py
 22. Solving problem of 'Independent Alleles' - mendel_second.py, independent_assortment.py
-23. Finding a protein motif - motif_implies_function.py
+23. Finding a protein motif - motif_implies_function.py, motif_function.py
 24. Inferring mRNA from Protein - reverse_translation.py
 25. Transcription May Begin Anywhere - open reading frame - ORF2.py
 26. Rearrangements Power Large-Scale Genomic Changes - Enumerating Gene Orders - gene_orders.py
