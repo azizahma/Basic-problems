@@ -25,7 +25,7 @@ This repository is for my own reference.
 22. Solving problem of 'Independent Alleles' - mendel_second.py, independent_assortment.py
 23. Finding a protein motif - motif_implies_function.py, motif_function.py
 24. Inferring mRNA from Protein - reverse_translation.py, pitfall_reverse_translation.py
-25. Transcription May Begin Anywhere - open reading frame - ORF2.py
+25. Transcription May Begin Anywhere - open reading frame - ORF2.py, ORF_transcription.py
 26. Rearrangements Power Large-Scale Genomic Changes - Enumerating Gene Orders - gene_orders.py
 27. Calculating Protein Mass - Chaining the Amino Acids - protein_mass.py
 28. Locating Restriction Sites - The Billion-Year War - restriction_sites.py
