@@ -20,6 +20,7 @@ def transcription(file):
         d = f.read().strip().replace('\n','')
         d = re.findall('[A,C,G,T]*', d)
         d = [ x for x in d if x is not '']
+
         aa_seq = []
         for x in d:
             for i in range(0, len(x),3):
@@ -37,17 +38,26 @@ def transcription(file):
                 valid = aa_seq[i:j]
                 print(''.join(valid))
 
-        print(aa_seq)
-        aa_seq_rev = aa_seq[::-1]
-        print(aa_seq_rev)
-        start_rev = [i for i, s in enumerate(aa_seq_rev) if s == 'M']
-        stop_rev = [i for i, s in enumerate(aa_seq_rev) if s == 'stop'][0]
+        aa_seq_R = []
+        for y in d:
+            y = y[::-1] # reverse complement
+            y = [ x.replace('C','c').replace('G','C').replace('T','t').replace('A','T').replace('c','G').replace('t','A') for x in y ]
+            y = ''.join(y)
+            for p in range(0, len(y), 3):
+                dnaR = y[p:p+3]
+                aaR = ''.join([v for k, v in dct.items() if k == dnaR])
+                aa_seq_R.append(aaR)
+
+        print(aa_seq_R)
+        start_rev = [i for i, s in enumerate(aa_seq_R) if s == 'M']
+        stop_rev = [i for i, s in enumerate(aa_seq_R) if s == 'stop'][0]
         l_rev = []
         l_rev.append(start_rev)
         l_rev.append([stop_rev])
+        print(l_rev)
         for p, q in itertools.product(*l_rev):
             if q > p:
-                valid_rev = aa_seq_rev[p:q]
+                valid_rev = aa_seq_R[p:q]
                 print(''.join(valid_rev))
 
 transcription('input')
