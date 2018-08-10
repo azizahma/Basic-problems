@@ -37,9 +37,17 @@ def transcription(file):
                 valid = aa_seq[i:j]
                 print(''.join(valid))
 
-
-
-
-
+        print(aa_seq)
+        aa_seq_rev = aa_seq[::-1]
+        print(aa_seq_rev)
+        start_rev = [i for i, s in enumerate(aa_seq_rev) if s == 'M']
+        stop_rev = [i for i, s in enumerate(aa_seq_rev) if s == 'stop'][0]
+        l_rev = []
+        l_rev.append(start_rev)
+        l_rev.append([stop_rev])
+        for p, q in itertools.product(*l_rev):
+            if q > p:
+                valid_rev = aa_seq_rev[p:q]
+                print(''.join(valid_rev))
 
 transcription('input')
