@@ -1,6 +1,7 @@
 # Open Reading Frames
 
 import re
+import itertools
 def transcription(file):
     """
     Given: A DNA string s of length at most 1 kbp in FASTA format.
@@ -19,11 +20,26 @@ def transcription(file):
         d = f.read().strip().replace('\n','')
         d = re.findall('[A,C,G,T]*', d)
         d = [ x for x in d if x is not '']
-        result = []
+        aa_seq = []
         for x in d:
-            for i in range(len(x)):
+            for i in range(0, len(x),3):
                 dna = x[i:i+3]
-                print(dna)
+                aa = ''.join([ v for k,v in dct.items() if k == dna ])
+                aa_seq.append(aa)
+        start = [ i for i,s in enumerate(aa_seq) if s == 'M']
+        stop = [ i for i,s in enumerate(aa_seq) if s == 'stop' ][0]
+        # use the approach of combining two numbers from start and stop lists
+        l = []
+        l.append(start)
+        l.append([stop])
+        for i,j in itertools.product(*l):
+            if j > i:
+                valid = aa_seq[i:j]
+                print(''.join(valid))
+
+
+
+
 
 
 transcription('input')
