@@ -26,22 +26,17 @@ def ORF(seq):
     aa = []
     start = [k for k, v in dct.items() if v == 'M']
     stop = [k for k, v in dct.items() if v == 'stop']
-    
+
     for i in range(len(seq)):
         codon = seq[i:i+3]
         if codon == ''.join(start):
             for j in range(i+3,len(seq),3):
                 a = seq[i:j]
                 c = a[-3:]
+                aa = ''.join([ v for k,v in dct.items() if k == c ])
+                print(aa, end='')
                 if any(c==x for x in stop):
-                    print(a)
                     break
-
-
-
-
-
-
 
         # if code == 'ATG':
         #     aa.append(code)
