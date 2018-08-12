@@ -23,21 +23,25 @@ with open('input') as f:
     d_rev = ''.join(d_rev)[::-1] # reverse complement
 
 def ORF(seq):
-
+    res = []
     start = [k for k, v in dct.items() if v == 'M']
     stop = [k for k, v in dct.items() if v == 'stop']
-
-    pr = []
     for i in range(len(seq)):
-
         codon = seq[i:i+3]
         if codon == ''.join(start):
             for j in range(i+3,len(seq),3):
                 a = seq[i:j]
                 c = a[-3:]
                 aa = [ v for k,v in dct.items() if k == c ]
-                pr.append(aa)
+                r =''.join(aa)
+                res.append(r)
                 if any(c==x for x in stop):
                     break
+    res = ''.join(res).split('stop')[:-1]
+    return res
 
-ORF(d)
+results = [ORF(d), ORF(d_rev)]
+print('\n'.join(set([ x for sub in results for x in sub ])))
+
+
+
