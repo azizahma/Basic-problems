@@ -23,66 +23,21 @@ with open('input') as f:
     d_rev = ''.join(d_rev)[::-1] # reverse complement
 
 def ORF(seq):
-    aa = []
+
     start = [k for k, v in dct.items() if v == 'M']
     stop = [k for k, v in dct.items() if v == 'stop']
 
+    pr = []
     for i in range(len(seq)):
+
         codon = seq[i:i+3]
         if codon == ''.join(start):
             for j in range(i+3,len(seq),3):
                 a = seq[i:j]
                 c = a[-3:]
-                aa = ''.join([ v for k,v in dct.items() if k == c ])
-                print(aa, end='')
+                aa = [ v for k,v in dct.items() if k == c ]
+                pr.append(aa)
                 if any(c==x for x in stop):
                     break
-
-        # if code == 'ATG':
-        #     aa.append(code)
-
-
-
-    # aa = []
-    # for i in range(0, len(seq),3):
-    #     dna = seq[i:i+3]
-    #     pr = ''.join([ v for k,v in dct.items() if k == dna ])
-    #     aa.append(pr)
-    # print(aa)
-
-
-    #     start = [ i for i,s in enumerate(aa_seq) if s == 'M']
-    #     stop = [ i for i,s in enumerate(aa_seq) if s == 'stop' ][0]
-    #     # use the approach of combining two numbers from start and stop lists
-    #     l = []
-    #     l.append(start)
-    #     l.append([stop])
-    #     for i,j in itertools.product(*l):
-    #         if j > i:
-    #             valid = aa_seq[i:j]
-    #             print(''.join(valid))
-    #
-    #     aa_seq_R = []
-    #     for y in d:
-    #         y = [ x.replace('C','c').replace('G','C').replace('T','t').replace('A','T').replace('c','G').replace('t','A') for x in y ] # reverse complement
-    #         y = ''.join(y)[::-1]
-    #         print(y)
-    #
-    #         for p in range(0, len(y), 3):
-    #             dnaR = y[p:p+3]
-    #             aaR = ''.join([v for k, v in dct.items() if k == dnaR])
-    #             aa_seq_R.append(aaR)
-    #
-    #     print(aa_seq_R)
-    #     start_rev = [i for i, s in enumerate(aa_seq_R) if s == 'M']
-    #     stop_rev = [i for i, s in enumerate(aa_seq_R) if s == 'stop'][0]
-    #     l_rev = []
-    #     l_rev.append(start_rev)
-    #     l_rev.append([stop_rev])
-    #     print(l_rev)
-    #     for p, q in itertools.product(*l_rev):
-    #         if q > p:
-    #             valid_rev = aa_seq_R[p:q]
-    #             print(''.join(valid_rev))
 
 ORF(d)
