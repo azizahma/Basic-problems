@@ -1,11 +1,9 @@
 # Open Reading Frames
-# Given: A DNA string s of length at most 1 kbp in FASTA format.
-# Return: Every distinct candidate protein string that can be translated from ORFs of s. Strings can be returned in any order.
 
 import re
 import itertools
 
-with open('input') as f:
+with open('rosalind_orf.txt') as f:
     dct = {'TTT': 'F', 'TTC': 'F', 'TTA': 'L', 'TTG': 'L', 'TCT': 'S', 'TCC': 'S', 'TCA': 'S', 'TCG': 'S',
             'TAT': 'Y', 'TAC': 'Y', 'TAA': 'stop', 'TAG': 'stop', 'TGT': 'C', 'TGC': 'C', 'TGA': 'stop', 'TGG': 'W',
             'CTT': 'L',
@@ -23,6 +21,10 @@ with open('input') as f:
     d_rev = ''.join(d_rev)[::-1] # reverse complement
 
 def ORF(seq):
+    """
+    Given: A DNA string s of length at most 1 kbp in FASTA format.
+    Return: Every distinct candidate protein string that can be translated from ORFs of s. Strings can be returned in any order.
+    """
     res = []
     start = [k for k, v in dct.items() if v == 'M']
     stop = [k for k, v in dct.items() if v == 'stop']
