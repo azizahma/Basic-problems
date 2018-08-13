@@ -29,7 +29,7 @@ This repository is for my own reference.
 26. Rearrangements Power Large-Scale Genomic Changes - Enumerating Gene Orders - gene_orders.py, enumerating_gene_orders.py
 27. Calculating Protein Mass - Chaining the Amino Acids - protein_mass.py, calc_pr_mass.py
 28. Locating Restriction Sites - The Billion-Year War - restriction_sites.py, reverse.palindrome.py
-29. RNA Splicing - Genes are Discontiguous - RNA_splicing.py
+29. RNA Splicing - Genes are Discontiguous - RNA_splicing.py, rna_splice.py
 30. Enumerating k-mers Lexicographically - organizing_strings.py
 
 Other interesting problems:
