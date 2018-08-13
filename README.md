@@ -27,7 +27,7 @@ This repository is for my own reference.
 24. Inferring mRNA from Protein - reverse_translation.py, pitfall_reverse_translation.py
 25. Transcription May Begin Anywhere - open reading frame - ORF2.py, ORF_transcription.py
 26. Rearrangements Power Large-Scale Genomic Changes - Enumerating Gene Orders - gene_orders.py, enumerating_gene_orders.py
-27. Calculating Protein Mass - Chaining the Amino Acids - protein_mass.py
+27. Calculating Protein Mass - Chaining the Amino Acids - protein_mass.py, calc_pr_mass.py
 28. Locating Restriction Sites - The Billion-Year War - restriction_sites.py
 29. RNA Splicing - Genes are Discontiguous - RNA_splicing.py
 30. Enumerating k-mers Lexicographically - organizing_strings.py
