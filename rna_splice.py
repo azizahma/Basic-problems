@@ -19,24 +19,34 @@ def rna_splice(file):
                 ss = s[i:i+l]
                 if any(ss==intr for intr in introns):
                     locations.append((i,l))
+        print(s)
+        print(len(s))
         exons = []
         for v in locations:
             exon1 = s[:v[0]]
             exon2 = s[v[0]+v[1]:]
             exons.append(exon1+exon2)
+            print(v)
+            print(exon1+exon2)
+            print(len(exon1+exon2))
+
+
         # the last exons to translate
-        exons = exons[-1]
-        dct = {'TTT': 'F', 'TTC': 'F', 'TTA': 'L', 'TTG': 'L', 'TCT': 'S', 'TCC': 'S', 'TCA': 'S', 'TCG': 'S',
-               'TAT': 'Y', 'TAC': 'Y', 'TAA': '', 'TAG': '', 'TGT': 'C', 'TGC': 'C', 'TGA': '', 'TGG': 'W',
-               'CTT': 'L',
-               'CTC': 'L', 'CTA': 'L', 'CTG': 'L', 'CCT': 'P', 'CCC': 'P', 'CCA': 'P', 'CCG': 'P', 'CAT': 'H',
-               'CAC': 'H', 'CAA': 'Q', 'CAG': 'Q', 'CGT': 'R', 'CGC': 'R', 'CGA': 'R', 'CGG': 'R', 'ATT': 'I',
-               'ATC': 'I', 'ATA': 'I', 'ATG': 'M', 'ACT': 'T', 'ACC': 'T', 'ACA': 'T', 'ACG': 'T', 'AAT': 'N',
-               'AAC': 'N', 'AAA': 'K', 'AAG': 'K', 'AGT': 'S', 'AGC': 'S', 'AGA': 'R', 'AGG': 'R', 'GTT': 'V',
-               'GTC': 'V', 'GTA': 'V', 'GTG': 'V', 'GCT': 'A', 'GCC': 'A', 'GCA': 'A', 'GCG': 'A', 'GAT': 'D',
-               'GAC': 'D', 'GAA': 'E', 'GAG': 'E', 'GGT': 'G', 'GGC': 'G', 'GGA': 'G', 'GGG': 'G'}
-        for i in range(0,len(exons),3):
-            code = exons[i:i+3]
-            print(''.join([ v for k,v in dct.items() if code==k ]), end='')
+
+
+        # exons = exons[-1]
+        # print(len(exons))
+        # dct = {'TTT': 'F', 'TTC': 'F', 'TTA': 'L', 'TTG': 'L', 'TCT': 'S', 'TCC': 'S', 'TCA': 'S', 'TCG': 'S',
+        #        'TAT': 'Y', 'TAC': 'Y', 'TAA': '', 'TAG': '', 'TGT': 'C', 'TGC': 'C', 'TGA': '', 'TGG': 'W',
+        #        'CTT': 'L',
+        #        'CTC': 'L', 'CTA': 'L', 'CTG': 'L', 'CCT': 'P', 'CCC': 'P', 'CCA': 'P', 'CCG': 'P', 'CAT': 'H',
+        #        'CAC': 'H', 'CAA': 'Q', 'CAG': 'Q', 'CGT': 'R', 'CGC': 'R', 'CGA': 'R', 'CGG': 'R', 'ATT': 'I',
+        #        'ATC': 'I', 'ATA': 'I', 'ATG': 'M', 'ACT': 'T', 'ACC': 'T', 'ACA': 'T', 'ACG': 'T', 'AAT': 'N',
+        #        'AAC': 'N', 'AAA': 'K', 'AAG': 'K', 'AGT': 'S', 'AGC': 'S', 'AGA': 'R', 'AGG': 'R', 'GTT': 'V',
+        #        'GTC': 'V', 'GTA': 'V', 'GTG': 'V', 'GCT': 'A', 'GCC': 'A', 'GCA': 'A', 'GCG': 'A', 'GAT': 'D',
+        #        'GAC': 'D', 'GAA': 'E', 'GAG': 'E', 'GGT': 'G', 'GGC': 'G', 'GGA': 'G', 'GGG': 'G'}
+        # for i in range(0,len(exons),3):
+        #     code = exons[i:i+3]
+        #     print(''.join([ v for k,v in dct.items() if code==k ]), end='')
 
 rna_splice('input')
