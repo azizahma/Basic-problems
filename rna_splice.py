@@ -10,9 +10,15 @@ def rna_splice(file):
         d = f.read().strip().replace('\n','')
         d = re.findall('[A,C,G,T]*', d)
         d = [ x for x in d if x is not '' ]
-        s = d[0]
+        s = ''.join(d[0])
         introns = d[1:]
-        print(s)
-        print(introns)
+        length = [ len(x) for x in introns ]
+        loc = []
+        for l in length:
+            for i in range(len(s)):
+                ss = s[i:i+l]
+                if any(ss==x for x in introns):
+                    loc.append((i, l))
+
 
 rna_splice('input')
