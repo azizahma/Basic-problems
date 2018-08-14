@@ -13,12 +13,19 @@ def rna_splice(file):
         s = ''.join(d[0])
         introns = d[1:]
         length = [ len(x) for x in introns ]
-        loc = []
+        locations = []
         for l in length:
             for i in range(len(s)):
                 ss = s[i:i+l]
-                if any(ss==x for x in introns):
-                    loc.append((i, l))
+                if any(ss==intr for intr in introns):
+                    locations.append((i,l))
+        exons = []
+        for v in locations:
+            exon1 = s[:v[0]]
+            exon2 = s[v[0]+v[1]:]
+            exons.append(exon1+exon2)
+        # the last exons to translate
+        
 
 
 rna_splice('input')
