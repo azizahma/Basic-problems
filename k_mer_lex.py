@@ -12,9 +12,10 @@ def organising_strings(file):
         d = [ x.replace('\n','') for x in d ]
         a = d[0].replace(' ','')
         res = list(itertools.permutations(a,int(d[1])))
+        res2 = list(itertools.product(a,repeat = int(d[1])))
+        results = sorted(set(res+res2))
 
-        for x in res:
+        for x in results:
              print(''.join(x))
 
-organising_strings('input')
-#organising_strings('rosalind_lexf.txt')
+organising_strings('rosalind_lexf.txt')
