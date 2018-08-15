@@ -30,7 +30,7 @@ This repository is for my own reference.
 27. Calculating Protein Mass - Chaining the Amino Acids - protein_mass.py, calc_pr_mass.py
 28. Locating Restriction Sites - The Billion-Year War - restriction_sites.py, reverse.palindrome.py
 29. RNA Splicing - Genes are Discontiguous - RNA_splicing.py, rna_splice.py
-30. Enumerating k-mers Lexicographically - organizing_strings.py
+30. Enumerating k-mers Lexicographically - organizing_strings.py, k_mer_lex.py
 
 Other interesting problems:
 1. Latest version (of eg. Opera version by directory name) - latestoperaversion.py
