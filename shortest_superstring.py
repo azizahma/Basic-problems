@@ -12,7 +12,8 @@ def fragment_assembly(file):
         #print(list(itertools.permutations(dR,2)))
         print(d1)
         for x in d1:
-            print(x)
+            for l in range(len(x),0,-1):
+                print(x[:l])
 
 fragment_assembly('input')
 
