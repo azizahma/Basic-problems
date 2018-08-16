@@ -32,6 +32,7 @@ This repository is for my own reference.
 29. RNA Splicing - Genes are Discontiguous - RNA_splicing.py, rna_splice.py
 30. Enumerating k-mers Lexicographically - organizing_strings.py, k_mer_lex.py
 31. A Simple Measure of Gene Order Similarity - Longest Increasing Subsequence - longest_asc_desc_subsequence.py
+32. Genome Assembly as Shortest Superstring - (the unrealistic) Fragment Assembly - shortest_superstring.py
 
 Other interesting problems:
 1. Latest version (of eg. Opera version by directory name) - latestoperaversion.py
