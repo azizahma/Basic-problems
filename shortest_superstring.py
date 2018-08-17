@@ -20,6 +20,7 @@ with open('input') as f:
     length = int(sum([ len(x) for x in dv ])/len(dk))
 
 def overlap(dct):
+    info = []
     pairs = list(itertools.permutations([k for k,v in dct.items()],2))
     for p in pairs:
         left = ''.join([ v for k,v in dct.items() if k == p[0] ])
@@ -27,6 +28,8 @@ def overlap(dct):
         for i in range(length,0,-1):
             l = left[i:]
             r = right[:-i]
-            if l == r:
-                print(l,r)
-overlap(dct)
+            if l == r and len(l) >= 5:
+                info.append([l,i,p])
+    return info
+
+print(overlap(dct))
