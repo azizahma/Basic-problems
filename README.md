@@ -31,7 +31,7 @@ This repository is for my own reference.
 28. Locating Restriction Sites - The Billion-Year War - restriction_sites.py, reverse.palindrome.py
 29. RNA Splicing - Genes are Discontiguous - RNA_splicing.py, rna_splice.py
 30. Enumerating k-mers Lexicographically - organizing_strings.py, k_mer_lex.py
-31. A Simple Measure of Gene Order Similarity - Longest Increasing Subsequence - longest_asc_desc_subsequence.py
+31. A Simple Measure of Gene Order Similarity - Longest Increasing Subsequence - longest_asc_desc_subsequence.py, gene_order_similarity.py
 32. Genome Assembly as Shortest Superstring - (the unrealistic) Fragment Assembly - shortest_superstring.py
 
 Other interesting problems:
