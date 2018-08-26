@@ -7,7 +7,6 @@
 
 # Return: A shortest superstring containing all the given strings (thus corresponding to a reconstructed chromosome).
 
-
 import re
 import itertools
 
@@ -19,17 +18,22 @@ with open('input') as f:
     dct = dict(list(zip(dk,dv)))
     length = int(sum([ len(x) for x in dv ])/len(dk))
 
-def overlap(dct):
-    info = []
-    pairs = list(itertools.permutations([k for k,v in dct.items()],2))
-    for p in pairs:
-        left = ''.join([ v for k,v in dct.items() if k == p[0] ])
-        right = ''.join([ v for k,v in dct.items() if k == p[1] ])
+def overlap(left, right):
         for i in range(length,0,-1):
             l = left[i:]
             r = right[:-i]
             if l == r and len(l) >= 5:
-                info.append([l,i,p])
-    return info
+                return i,l
 
-print(overlap(dct))
+dd = {}
+for l in list(itertools.permutations(dk,2)):
+    left = ''.join([ v for k,v in dct.items() if k == l[0]])
+    right = ''.join([ v for k,v in dct.items() if k == l[1]])
+    if overlap(left,right) is not None:
+        a = {l:overlap(left,right)}
+        dd.update(a)
+print(dd)
+
+
+    # print(left[o:])
+    # print(right[:-o])
