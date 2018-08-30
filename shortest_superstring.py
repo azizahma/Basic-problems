@@ -21,37 +21,33 @@ with open('input') as f:
     dct = dict(list(zip(dk,dv)))
     length = int(sum([ len(x) for x in dv ])/len(dk))
 
-#left = dv[1]
-#right = dv[3]
-print(dct)
-
 def overlap(left, right):
     for i in range(length,0,-1):
         l = left[i:]
         r = right[:-i]
         if l == r : #######and len(l) >= 5:
-            a = {left:{right:len(l)}}
+            return len(l)
         else:
-            a = {left:{right:0}}
-        print(a)
-## I think the seq name must be specify in overlap not in get_all_o_lap
+            return 0
 
 def get_all_o_lap(dct):
+    o_lap = []
     for l in list(itertools.permutations([k for k,v in dct.items()],2)):
+        print(l)
         left = ''.join([v for k, v in dct.items() if k == l[0]])
         right = ''.join([ v for k,v in dct.items() if k == l[1]])
-        overlap(left,right)
-
-
-
-# dd = {}
-# for l in list(itertools.permutations(dk,2)):
-#     left = ''.join([ v for k,v in dct.items() if k == l[0]])
-#     right = ''.join([ v for k,v in dct.items() if k == l[1]])
-#     if overlap(left,right) is not None:
-#         a = {l:overlap(left,right)}
-#         dd.update(a)
-# print(dd)
+        a = {l[0]:{l[1]:overlap(left,right)}}
+        o_lap.append(a)
+        print(o_lap)
 
 #overlap(left,right)
 get_all_o_lap(dct)
+
+# o_lap = []
+    # for l in [ k for k,v in dct.items() ]:
+    #     left = ''.join([v for k, v in dct.items() if k == l ])
+    #     for r in [ k for k,v in dct.items() if k is not l ]:
+    #         right = ''.join([v for k, v in dct.items() if k == r ])
+    #         a = {l:{r: overlap(left,right)}}
+    #         o_lap.append(a)
+    #         print(o_lap)
