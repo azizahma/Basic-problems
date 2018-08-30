@@ -21,12 +21,22 @@ with open('input') as f:
     dct = dict(list(zip(dk,dv)))
     length = int(sum([ len(x) for x in dv ])/len(dk))
 
+left = dv[1]
+right = dv[3]
+
+o_lap = {}
 def overlap(left, right):
         for i in range(length,0,-1):
             l = left[i:]
             r = right[:-i]
-            if l == r and len(l) >= 5:
-                return l
+            if l == r : #######and len(l) >= 5:
+                print(len(l))
+            else:
+                print(0)
+
+
+
+#def getAllOverlaps()
 
 # dd = {}
 # for l in list(itertools.permutations(dk,2)):
@@ -38,5 +48,4 @@ def overlap(left, right):
 # print(dd)
 
 
-    # print(left[o:])
-    # print(right[:-o])
+overlap(left,right)
