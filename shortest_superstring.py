@@ -5,7 +5,10 @@
 # The dataset is guaranteed to satisfy the following condition: there exists a unique way to reconstruct the entire
 # chromosome from these reads by gluing together pairs of reads that overlap by more than half their length.
 
-# Return: A shortest superstring containing all the given strings (thus corresponding to a reconstructed chromosome).
+# Return: A shortest superstring containing all the given strings (thus corresponding to a reconstructed chromosome)
+
+# https://munch-lab.org/2013/11/29/exercise-genome-assembly/
+# https://www.coursera.org/lecture/dna-sequencing/lecture-the-shortest-common-superstring-problem-NAXB5
 
 import re
 import itertools
@@ -23,16 +26,16 @@ def overlap(left, right):
             l = left[i:]
             r = right[:-i]
             if l == r and len(l) >= 5:
-                return i,l
+                return l
 
-dd = {}
-for l in list(itertools.permutations(dk,2)):
-    left = ''.join([ v for k,v in dct.items() if k == l[0]])
-    right = ''.join([ v for k,v in dct.items() if k == l[1]])
-    if overlap(left,right) is not None:
-        a = {l:overlap(left,right)}
-        dd.update(a)
-print(dd)
+# dd = {}
+# for l in list(itertools.permutations(dk,2)):
+#     left = ''.join([ v for k,v in dct.items() if k == l[0]])
+#     right = ''.join([ v for k,v in dct.items() if k == l[1]])
+#     if overlap(left,right) is not None:
+#         a = {l:overlap(left,right)}
+#         dd.update(a)
+# print(dd)
 
 
     # print(left[o:])
