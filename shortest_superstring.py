@@ -21,9 +21,6 @@ with open('input') as f:
     dct = dict(list(zip(dk,dv)))
     length = int(sum([ len(x) for x in dv ])/len(dk))
 
-left = dv[0]
-right = dv[2]
-
 def overlap(left, right):
     results = []
     for i in range(length,0,-1):
@@ -42,7 +39,6 @@ def get_all_o_lap(dct):
         for rname in [ k for k,v in dct.items() if k is not lname ]:
             left = ''.join([v for k, v in dct.items() if k == lname])
             right = ''.join([v for k, v in dct.items() if k == rname ])
-            print(left,right)
             b = {rname:overlap(left,right)}
             zz.update(b)
         a[lname] = zz
