@@ -21,33 +21,58 @@ with open('input') as f:
     dct = dict(list(zip(dk,dv)))
     length = int(sum([ len(x) for x in dv ])/len(dk))
 
+# left = dv[0]
+# right = dv[2]
+
 def overlap(left, right):
     for i in range(length,0,-1):
         l = left[i:]
         r = right[:-i]
-        if l == r : #######and len(l) >= 5:
+        if l == r and len(l) >= 5:
             return len(l)
         else:
-            return 0
+            return (0)
 
 def get_all_o_lap(dct):
-    o_lap = []
-    for l in list(itertools.permutations([k for k,v in dct.items()],2)):
-        print(l)
-        left = ''.join([v for k, v in dct.items() if k == l[0]])
-        right = ''.join([ v for k,v in dct.items() if k == l[1]])
-        a = {l[0]:{l[1]:overlap(left,right)}}
-        o_lap.append(a)
-        print(o_lap)
+    for lname in [ k for k,v in dct.items() ]:
+        a = {lname:{}}
+        zz = {}
+        for rname in [ k for k,v in dct.items() if k is not lname ]:
+            left = ''.join([v for k, v in dct.items() if k == lname])
+            right = ''.join([v for k, v in dct.items() if k == rname ])
+            print(left,right)
+            b = {rname:overlap(left,right)}
+            zz.update(b)
+        a[lname] = zz
+        print(a)
+        #print('3a = ' + str(a))
+
+        #
+        #     #x = r
+        #     a.update(r)
+        #     print(a)
+        #     left = ''.join([v for k, v in dct.items() if k == l])
+        #     right = ''.join([v for k, v in dct.items() if k == r ])
+        #     b = {r:overlap(left,right)}
+        #     print(b)
+        #     #a = {l:{b}}
+        #     print(a)
+
+
+        #     left = ''.join([v for k, v in dct.items() if k == l])
+        #     right = ''.join([v for k, v in dct.items() if k == r ])
+        #     b = {overlap(left,right)}
+
+
+# o_lap = []
+    # for l in list(itertools.permutations([k for k,v in dct.items()],2)):
+    #     print(l)
+    #     left = ''.join([v for k, v in dct.items() if k == l[0]])
+    #     right = ''.join([ v for k,v in dct.items() if k == l[1]])
+    #     a = {l[0]:{l[1]:overlap(left,right)}}
+    #     o_lap.append(a)
+    #     print(o_lap)
 
 #overlap(left,right)
 get_all_o_lap(dct)
 
-# o_lap = []
-    # for l in [ k for k,v in dct.items() ]:
-    #     left = ''.join([v for k, v in dct.items() if k == l ])
-    #     for r in [ k for k,v in dct.items() if k is not l ]:
-    #         right = ''.join([v for k, v in dct.items() if k == r ])
-    #         a = {l:{r: overlap(left,right)}}
-    #         o_lap.append(a)
-    #         print(o_lap)
