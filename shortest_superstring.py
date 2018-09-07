@@ -33,6 +33,7 @@ def overlap(left, right):
     return max(results)
 
 def get_all_o_lap(dct):
+    o_lap = {}
     for lname in [ k for k,v in dct.items() ]:
         a = {lname:{}}
         zz = {}
@@ -42,8 +43,14 @@ def get_all_o_lap(dct):
             b = {rname:overlap(left,right)}
             zz.update(b)
         a[lname] = zz
-        print(a)
+        o_lap.update(a)
+    return o_lap
 
-#overlap(left,right)
-get_all_o_lap(dct)
+import pandas as pd
+def prettify_o_lap(o_lap):
+    df = pd.DataFrame(o_lap)
+    print(df.fillna('-'))
+
+o_lap = get_all_o_lap(dct)
+prettify_o_lap(o_lap)
 
