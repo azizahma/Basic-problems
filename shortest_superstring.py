@@ -49,8 +49,24 @@ def get_all_o_lap(dct):
 import pandas as pd
 def prettify_o_lap(o_lap):
     df = pd.DataFrame(o_lap)
-    print(df.fillna('-'))
+    df = df.fillna('-')
+    return df
+    #print(df.fillna('-'))
+
+def find_first_read(o_lap):
+    df = prettify_o_lap(o_lap)
+    print(df)
+    for i,j in df.iterrows():
+        
+
+
+    # t = [ [ j for i,j in v.items() if j is not 0 ] for k,v in o_lap.items() ]
+    # m = max([ len(x) for x in t ])
+    # print([[ i for i,j in v.items() if j is not 0 ] for k,v in o_lap.items() ])
+
 
 o_lap = get_all_o_lap(dct)
-prettify_o_lap(o_lap)
+#print(o_lap)
+#prettify_o_lap(o_lap)
+find_first_read(o_lap)
 
