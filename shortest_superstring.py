@@ -56,7 +56,8 @@ def prettify_o_lap(o_lap):
 def find_first_read(o_lap):
     df = prettify_o_lap(o_lap)
     print(df)
-    for i,j in df.iterrows():
+    print([ j.count() for i,j in df.iterrows() ] )
+
         
 
 
