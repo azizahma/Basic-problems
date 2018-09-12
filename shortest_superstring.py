@@ -54,20 +54,11 @@ def prettify_o_lap(o_lap):
     #print(df.fillna('-'))
 
 def find_first_read(o_lap): # via dictionary
-    print(o_lap)
-
     t = [ [ j for i,j in v.items() if j is not 0 ] for k,v in o_lap.items() ]
     m = max([ len(x) for x in t ])
-
     ext = [ {k:[ j for i,j in v.items() if j is not 0 ]} for k,v in o_lap.items() ]
-
-    #print(type(ext))
-
-    #print([x for x,y in ext.items()])
-
-
-
-
+    for x in ext:
+        print(''.join([ k for k,v in x.items() if len(v)==m ]))
 
 o_lap = get_all_o_lap(dct)
 #print(o_lap)
