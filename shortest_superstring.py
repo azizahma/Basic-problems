@@ -57,8 +57,14 @@ def find_first_read(o_lap): # via dictionary
     t = [ [ j for i,j in v.items() if j is not 0 ] for k,v in o_lap.items() ]
     m = max([ len(x) for x in t ])
     ext = [ {k:[ j for i,j in v.items() if j is not 0 ]} for k,v in o_lap.items() ]
+    r = []
     for x in ext:
-        print(''.join([ k for k,v in x.items() if len(v)==m ]))
+        for k,v in x.items():
+            if len(v)==m:
+                r.append(k)
+    print(r[0])
+
+
 
 o_lap = get_all_o_lap(dct)
 #print(o_lap)
