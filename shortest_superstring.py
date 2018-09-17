@@ -56,18 +56,38 @@ def prettify_o_lap(o_lap):
 def find_first_read(o_lap): # via dictionary
     t = [ [ j for i,j in v.items() if j is not 0 ] for k,v in o_lap.items() ]
     m = max([ len(x) for x in t ])
-    ext = [ {k:[ j for i,j in v.items() if j is not 0 ]} for k,v in o_lap.items() ]
+    ext = [ {k:[ j for i,j in v.items() if j is not 0 ]} for k,v in o_lap.items() ] ## to clarify >5 as significant overlap
     r = []
     for x in ext:
         for k,v in x.items():
             if len(v)==m:
                 r.append(k)
-    print(r[0])
+    first = r[0]
+    return first
 
+def find_key_of_largest_value(dct):
+    #o_lap = get_all_o_lap(dct)
+    vals = []
+    for k,v in o_lap.items():
+        for i,j in v.items():
+            vals.append(j)
+    m = max(vals)
+    largest = [[ i for i,j in v.items() if j==m ] for k,v in o_lap.items() if [ i for i,j in v.items() if j==m ] !=[]]
+    return largest
+
+def find_order(first, o_lap):
+    print(first)
+    print(o_lap)
 
 
 o_lap = get_all_o_lap(dct)
-#print(o_lap)
-#prettify_o_lap(o_lap)
-find_first_read(o_lap)
+first = find_first_read(o_lap)
+largest = find_key_of_largest_value(dct)
+
+find_order(first, o_lap)
+
+#largest = find_largest_value(o_lap)
+#find_next_read(dct)
+#find_order(first, o_lap)
+
 
