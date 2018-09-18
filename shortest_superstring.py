@@ -7,6 +7,7 @@
 
 # Return: A shortest superstring containing all the given strings (thus corresponding to a reconstructed chromosome)
 
+# References:
 # https://munch-lab.org/2013/11/29/exercise-genome-assembly/
 # https://www.coursera.org/lecture/dna-sequencing/lecture-the-shortest-common-superstring-problem-NAXB5
 
@@ -63,26 +64,26 @@ def find_first_read(o_lap): # via dict; based on 'it only has a good overlap (>5
                 results.append(k)
     results = dict( (x,results.count(x)) for x in set(results) )
     m = max([ v for k,v in results.items() ])
-    print(''.join([ k for k,v in results.items() if v == m ]))
+    first = ''.join([ k for k,v in results.items() if v == m ])
+    return first
+
+def find_key_of_largest_value(dct):
+    #o_lap = get_all_o_lap(dct)
+    vals = []
+    for k,v in o_lap.items():
+        for i,j in v.items():
+            vals.append(j)
+    m = max(vals)
+    largest = [[ i for i,j in v.items() if j==m ] for k,v in o_lap.items() if [ i for i,j in v.items() if j==m ] !=[]]
+    return largest
+
+def find_order(first, o_lap):
+    
+
 
 o_lap = get_all_o_lap(dct)
-find_first_read(o_lap)
-
-
-# def find_key_of_largest_value(dct):
-#     #o_lap = get_all_o_lap(dct)
-#     vals = []
-#     for k,v in o_lap.items():
-#         for i,j in v.items():
-#             vals.append(j)
-#     m = max(vals)
-#     largest = [[ i for i,j in v.items() if j==m ] for k,v in o_lap.items() if [ i for i,j in v.items() if j==m ] !=[]]
-#     return largest
-#
-# def find_order(first, o_lap):
-#     print(first)
-#     print(o_lap)
-
-
+first = find_first_read(o_lap)
+largest = find_key_of_largest_value(dct)
+find_order(first, o_lap)
 
 
