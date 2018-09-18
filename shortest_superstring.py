@@ -53,41 +53,36 @@ def prettify_o_lap(o_lap):
     return df
     #print(df.fillna('-'))
 
-def find_first_read(o_lap): # via dictionary
-    t = [ [ j for i,j in v.items() if j is not 0 ] for k,v in o_lap.items() ]
-    m = max([ len(x) for x in t ])
-    ext = [ {k:[ j for i,j in v.items() if j is not 0 ]} for k,v in o_lap.items() ] ## to clarify >5 as significant overlap
-    r = []
-    for x in ext:
-        for k,v in x.items():
-            if len(v)==m:
-                r.append(k)
-    first = r[0]
-    return first
-
-def find_key_of_largest_value(dct):
-    #o_lap = get_all_o_lap(dct)
-    vals = []
+def find_first_read(o_lap): # via dict; based on 'it only has a good overlap (>5 is significant overlap) when positioned to the left of other reads'
+    '''to look for - 'which column (from prettify_o_lap) has no 'significant' overlap?'''
+    # df = prettify_o_lap(o_lap) # for visual purpose only
+    results = []
     for k,v in o_lap.items():
         for i,j in v.items():
-            vals.append(j)
-    m = max(vals)
-    largest = [[ i for i,j in v.items() if j==m ] for k,v in o_lap.items() if [ i for i,j in v.items() if j==m ] !=[]]
-    return largest
-
-def find_order(first, o_lap):
-    print(first)
-    print(o_lap)
-
+            if j < 5:
+                results.append(k)
+    results = dict( (x,results.count(x)) for x in set(results) )
+    m = max([ v for k,v in results.items() ])
+    print(''.join([ k for k,v in results.items() if v == m ]))
 
 o_lap = get_all_o_lap(dct)
-first = find_first_read(o_lap)
-largest = find_key_of_largest_value(dct)
+find_first_read(o_lap)
 
-find_order(first, o_lap)
 
-#largest = find_largest_value(o_lap)
-#find_next_read(dct)
-#find_order(first, o_lap)
+# def find_key_of_largest_value(dct):
+#     #o_lap = get_all_o_lap(dct)
+#     vals = []
+#     for k,v in o_lap.items():
+#         for i,j in v.items():
+#             vals.append(j)
+#     m = max(vals)
+#     largest = [[ i for i,j in v.items() if j==m ] for k,v in o_lap.items() if [ i for i,j in v.items() if j==m ] !=[]]
+#     return largest
+#
+# def find_order(first, o_lap):
+#     print(first)
+#     print(o_lap)
+
+
 
 
