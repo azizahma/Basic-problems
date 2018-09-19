@@ -50,7 +50,7 @@ def get_all_o_lap(dct):
 import pandas as pd
 def prettify_o_lap(o_lap):
     df = pd.DataFrame(o_lap)
-    df = df.fillna('-')
+    #df = df.fillna('-')
     return df
     #print(df.fillna('-'))
 
@@ -77,33 +77,35 @@ def find_key_of_largest_value(dct):
     largest = [[ i for i,j in v.items() if j==m ] for k,v in o_lap.items() if [ i for i,j in v.items() if j==m ] !=[]]
     return largest
 
-def find_order(first, o_lap):
+def find_order(first, o_lap): # via pandas dataframe
+    '''Returns a list of read names in the order in which they represent the genomic sequence.'''
     order = [first]
     vals = []
     for k,v in o_lap.items():
         for i,j in v.items():
             if i == first:
                 vals.append(j)
-    mm = max(vals)
+    mj = max(vals)
+
     for k,v in o_lap.items():
         for i,j in v.items():
-            if i == first and j==mm:
+            if i == first and j==mj:
                 order.append(k)
-                first = k
-    print(order)
-
-
-
-
+                return order
+            else:
+                first = order[-1]
+                res = find_order(first, o_lap)
+                return res
 
 
 o_lap = get_all_o_lap(dct)
 first = find_first_read(o_lap)
 largest = find_key_of_largest_value(dct)
-find_order(first, o_lap)
+print(find_order(first, o_lap))
 
 print(first)
 print(o_lap)
+print(largest)
 print(prettify_o_lap(o_lap))
 
 
