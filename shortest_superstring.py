@@ -78,12 +78,32 @@ def find_key_of_largest_value(dct):
     return largest
 
 def find_order(first, o_lap):
-    
+    order = [first]
+    vals = []
+    for k,v in o_lap.items():
+        for i,j in v.items():
+            if i == first:
+                vals.append(j)
+    mm = max(vals)
+    for k,v in o_lap.items():
+        for i,j in v.items():
+            if i == first and j==mm:
+                order.append(k)
+                first = k
+    print(order)
+
+
+
+
 
 
 o_lap = get_all_o_lap(dct)
 first = find_first_read(o_lap)
 largest = find_key_of_largest_value(dct)
 find_order(first, o_lap)
+
+print(first)
+print(o_lap)
+print(prettify_o_lap(o_lap))
 
 
