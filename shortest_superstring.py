@@ -77,26 +77,21 @@ def find_key_of_largest_value(dct):
     largest = [[ i for i,j in v.items() if j==m ] for k,v in o_lap.items() if [ i for i,j in v.items() if j==m ] !=[]]
     return largest
 
-def find_order(first, o_lap): # via pandas dataframe
+def find_order(first, o_lap):
     '''Returns a list of read names in the order in which they represent the genomic sequence.'''
     order = [first]
-    vals = []
-    for k,v in o_lap.items():
-        for i,j in v.items():
-            if i == first:
-                vals.append(j)
-    mj = max(vals)
+    #name = order[-1]
+    if name == 
 
-    for k,v in o_lap.items():
-        for i,j in v.items():
-            if i == first and j==mj:
-                order.append(k)
-                return order
-            else:
-                first = order[-1]
-                res = find_order(first, o_lap)
-                return res
 
+    # for k,v in o_lap.items():
+    #     for i,j in v.items():
+    #         if i == first:
+    #             check = ''.join(map(str, max([[j for i, j in v.items() if i == first] for k, v in o_lap.items()])))
+    #             order.append(k)
+    #         else:
+    #             order.append('x')
+    # return order
 
 o_lap = get_all_o_lap(dct)
 first = find_first_read(o_lap)
