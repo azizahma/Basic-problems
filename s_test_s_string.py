@@ -33,14 +33,29 @@ def overlap(left, right):
 
 def genome_assembly(dct):
     '''Return: A shortest superstring containing all the given strings (thus corresponding to a reconstructed chromosome).'''
-    olap = []
+    o_lap = {}
     for lname in [k for k, v in dct.items()]:
+        a = {lname: {}}
+        zz = {}
         for rname in [k for k, v in dct.items() if k is not lname]:
             left = ''.join([v for k,v in dct.items() if k == lname])
             right = ''.join([v for k,v in dct.items() if k == rname])
-            x = overlap(left,right)
-            olap.append(x)
-    print(max(olap))
+            x = {rname: overlap(left, right)}
+            zz.update(x)
+        a[lname] = zz
+        o_lap.update(a)
+    print(o_lap)
+    #print(max([ [ j for i,j in v.items() ] for k,v in o_lap.items()]))
+    ref = []
+    for l,r in o_lap.items():
+        ref.append(max([ v for k,v in r.items() ]))
+
+    for l, r in o_lap.items():
+        print(l, [k for k,v in r.items() if v == max(ref)])
+
+
+
+
 
 
 #print(overlap(left,right))
