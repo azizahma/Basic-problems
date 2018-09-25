@@ -44,14 +44,33 @@ def genome_assembly(dct):
             zz.update(x)
         a[lname] = zz
         o_lap.update(a)
-    print(o_lap)
+    #print(o_lap)
     #print(max([ [ j for i,j in v.items() ] for k,v in o_lap.items()]))
     ref = []
     for l,r in o_lap.items():
         ref.append(max([ v for k,v in r.items() ]))
 
-    for l, r in o_lap.items():
-        print(l, [k for k,v in r.items() if v == max(ref)])
+    order = []
+    for l in dk:
+        ref2 = [ [i for i,j in v.items() if j==max(ref)] for k,v in o_lap.items() if k == l]
+        ref2 = [''.join(x) for x in ref2]
+        a = (l, ref2)
+        a = (l, ''.join(a[1]))
+        print(a)
+
+        ## check seq-wise correct or not, then use dict? to follow
+
+    #print(order)
+
+
+
+
+        # ref2 = (l, [k for k,v in r.items() if v == max(ref)])
+        # order.append(ref2)
+
+
+
+
 
 
 
