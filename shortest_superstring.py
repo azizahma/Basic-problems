@@ -70,22 +70,32 @@ def find_first_read(o_lap): # via dict; based on 'it only has a good overlap (>5
     first = ''.join([ k for k,v in results.items() if v == m ])
     return first
 
-# def find_key_of_largest_value(dct):
-#     #o_lap = get_all_o_lap(dct)
-#     vals = []
-#     for k,v in o_lap.items():
-#         for i,j in v.items():
-#             vals.append(j)
-#     m = max(vals)
-#     largest = [[ i for i,j in v.items() if j==m ] for k,v in o_lap.items() if [ i for i,j in v.items() if j==m ] !=[]]
-#     return largest
+def find_key_for_largest_value(dic):
+    vals = [ [ j for i,j in v.items() ] for k,v in dic.items() ]
+    for i in vals:
+        m = max(i)
+        largest = [ [ i for i,j in v.items() if j == m ] for k,v in dic.items() ]
+        for ii in largest:
+            ii = ''.join(ii)
 
-# def find_order(first, o_lap):
-#     '''Returns a list of read names in the order in which they represent the genomic sequence.'''
-#     order = [first]
-#     #name = order[-1]
-#     if name ==
+def find_order(first, o_lap):
+    '''Returns a list of read names in the order in which they represent the genomic sequence.'''
+    order = [first]
+    if len(order) == 1:
+        name = order[0]
+        dic =  {k: v for k,v in o_lap.items() if k == name}
+        a = find_key_for_largest_value(dic)
+        order.append(a)
+        return order
 
+    else:
+        name = order[-1]
+        return order
+
+
+    #largest = find_key_of_largest_value()
+
+    #return order
 
     # for k,v in o_lap.items():
     #     for i,j in v.items():
@@ -98,8 +108,8 @@ def find_first_read(o_lap): # via dict; based on 'it only has a good overlap (>5
 
 o_lap = get_all_o_lap(dct)
 first = find_first_read(o_lap)
-#largest = find_key_of_largest_value(dct)
-#print(find_order(first, o_lap))
+#print(find_key_for_largest_value(dic))
+print(find_order(first, o_lap))
 
 print(dct)
 print(first)
