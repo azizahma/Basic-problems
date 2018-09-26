@@ -77,6 +77,7 @@ def find_key_for_largest_value(dic):
         largest = [ [ i for i,j in v.items() if j == m ] for k,v in dic.items() ]
         for ii in largest:
             ii = ''.join(ii)
+            return ii
 
 def find_order(first, o_lap):
     '''Returns a list of read names in the order in which they represent the genomic sequence.'''
@@ -89,8 +90,8 @@ def find_order(first, o_lap):
         return order
 
     else:
-        name = order[-1]
-        return order
+        #name = order[-1]
+        return 0
 
 
     #largest = find_key_of_largest_value()
