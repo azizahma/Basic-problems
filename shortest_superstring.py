@@ -75,9 +75,8 @@ def find_key_for_largest_value(dic):
     m = [ [j for i,j in v.items() ] for k,v in dic.items()]
     m = max(m[0])
     largest = [ [ i for i,j in v.items() if j == m ] for k,v in dic.items() ]
-    for i in largest:
-        i = ''.join(i)
-        return i
+    return ''.join(largest[0])
+
 
 def find_order(first, o_lap):
     '''Returns a list of read names in the order in which they represent the genomic sequence.'''
@@ -89,7 +88,6 @@ def find_order(first, o_lap):
         next_r = find_key_for_largest_value({k:v for k, v in o_lap.items() if k == first})
         return [first] + [find_order(next_r, o_lap)]
 
-
 o_lap = get_all_o_lap(dct)
 first = find_first_read(o_lap)
 dic = {k:v for k, v in o_lap.items() if k == first} ### mcm ada problem kat sini, tapi patutnya tak, as it wii search local value dulu baru global
@@ -99,7 +97,7 @@ print(find_order(first, o_lap))
 # print(dct)
 # print(first)
 # print(o_lap)
-# print(largest)
+#print(largest)
 # print(prettify_o_lap(o_lap))
 
 
