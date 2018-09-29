@@ -71,51 +71,35 @@ def find_first_read(o_lap): # via dict; based on 'it only has a good overlap (>5
     return first
 
 def find_key_for_largest_value(dic):
-    vals = [ [ j for i,j in v.items() ] for k,v in dic.items() ]
-    for i in vals:
-        m = max(i)
-        largest = [ [ i for i,j in v.items() if j == m ] for k,v in dic.items() ]
-        for ii in largest:
-            ii = ''.join(ii)
-            return ii
+    # print(dic) # imagine a dict from any left (or first) read ie. { k:v for k,v in o_lap.items() if k == 'Rosalind_56' }
+    m = [ [j for i,j in v.items() ] for k,v in dic.items()]
+    m = max(m[0])
+    largest = [ [ i for i,j in v.items() if j == m ] for k,v in dic.items() ]
+    for i in largest:
+        i = ''.join(i)
+        return i
 
 def find_order(first, o_lap):
     '''Returns a list of read names in the order in which they represent the genomic sequence.'''
-    order = [first]
-    if len(order) == 1:
-        name = order[0]
-        dic =  {k: v for k,v in o_lap.items() if k == name}
-        a = find_key_for_largest_value(dic)
-        order.append(a)
-        return order
-
+    # dic = {k:v for k,v in o_lap.items() if k == first} # must be called after first is obtained
+    if max([[j for i, j in v.items()] for k, v in o_lap.items() if k == first][0]) < 3:
+        return first
     else:
-        #name = order[-1]
-        return 0
+        #return 0 ## for standby utk test nnt
+        next_r = find_key_for_largest_value({k:v for k, v in o_lap.items() if k == first})
+        return [first] + [find_order(next_r, o_lap)]
 
-
-    #largest = find_key_of_largest_value()
-
-    #return order
-
-    # for k,v in o_lap.items():
-    #     for i,j in v.items():
-    #         if i == first:
-    #             check = ''.join(map(str, max([[j for i, j in v.items() if i == first] for k, v in o_lap.items()])))
-    #             order.append(k)
-    #         else:
-    #             order.append('x')
-    # return order
 
 o_lap = get_all_o_lap(dct)
 first = find_first_read(o_lap)
-#print(find_key_for_largest_value(dic))
+dic = {k:v for k, v in o_lap.items() if k == first} ### mcm ada problem kat sini, tapi patutnya tak, as it wii search local value dulu baru global
+largest = find_key_for_largest_value(dic)
 print(find_order(first, o_lap))
 
-print(dct)
-print(first)
-print(o_lap)
-#print(largest)
-print(prettify_o_lap(o_lap))
+# print(dct)
+# print(first)
+# print(o_lap)
+# print(largest)
+# print(prettify_o_lap(o_lap))
 
 
