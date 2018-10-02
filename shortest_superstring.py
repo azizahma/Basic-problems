@@ -77,29 +77,49 @@ def find_key_for_largest_value(dic):
     largest = [ [ i for i,j in v.items() if j == m ] for k,v in dic.items() ]
     return ''.join(largest[0])
 
-
 def find_order(first, o_lap):
     '''Returns a list of read names in the order in which they represent the genomic sequence.'''
     # dic = {k:v for k,v in o_lap.items() if k == first} # must be called after first is obtained
     if max([[j for i, j in v.items()] for k, v in o_lap.items() if k == first][0]) < 3:
         return first
     else:
-        #return 0 ## for standby utk test nnt
         next_r = find_key_for_largest_value({k:v for k, v in o_lap.items() if k == first})
         return [first] + [find_order(next_r, o_lap)]
 
+def assemble_G(order, dct, o_lap):
+    seq = ''
+    for i in range(len(order)-1):
+        p = ''.join([k for k,v in dct.items() if k==order[i]])
+        n = ''.join([k for k,v in dct.items() if k==order[i+1]])
+        p_seq = ''.join([v for k, v in dct.items() if k == order[i]])
+        n_seq = ''.join([v for k,v in dct.items() if k==order[i+1]])
+        n_olap = [[j for i,j in v.items() if i==n] for k,v in o_lap.items() if k==p]
+        l = n_olap[0][0]
+        s = p_seq+n_seq[l:]
+        seq += s
+
+        
+        print(seq)
+
+
+    #l = order[-1]
+
+
 o_lap = get_all_o_lap(dct)
 first = find_first_read(o_lap)
-dic = {k:v for k, v in o_lap.items() if k == first} ### mcm ada problem kat sini, tapi patutnya tak, as it wii search local value dulu baru global
+dic = {k:v for k, v in o_lap.items() if k == first}
 largest = find_key_for_largest_value(dic)
 #order = find_order(first, o_lap)
 order = re.findall('Rosalind_[0-9]*', str(find_order(first, o_lap)))
-print(order)
 
+print(order)
+assemble_G(order, dct, o_lap)
+
+# print(order)
 # print(dct)
 # print(first)
 # print(o_lap)
-#print(largest)
+# print(largest)
 # print(prettify_o_lap(o_lap))
 
 
