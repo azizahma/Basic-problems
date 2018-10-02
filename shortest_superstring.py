@@ -14,6 +14,7 @@
 import re
 import itertools
 
+#with open('rosalind_long.txt') as f:
 with open('input') as f:
     d = f.read().strip().replace('\n','')
     dk = re.findall('Rosalind_[0-9]*', d)
@@ -88,6 +89,7 @@ def find_order(first, o_lap):
 
 def assemble_G(order, dct, o_lap):
     seq = ''
+    ll = []
     for i in range(len(order)-1):
         p = ''.join([k for k,v in dct.items() if k==order[i]])
         n = ''.join([k for k,v in dct.items() if k==order[i+1]])
@@ -95,15 +97,14 @@ def assemble_G(order, dct, o_lap):
         n_seq = ''.join([v for k,v in dct.items() if k==order[i+1]])
         n_olap = [[j for i,j in v.items() if i==n] for k,v in o_lap.items() if k==p]
         l = n_olap[0][0]
-        s = p_seq+n_seq[l:]
-        seq += s
-
-        
-        print(seq)
-
-
-    #l = order[-1]
-
+        ll.append(l)
+        if i == 0:
+            s = p_seq+n_seq[l:]
+            seq += s
+        else:
+            s = n_seq[l:]
+            seq += s
+    print(seq)
 
 o_lap = get_all_o_lap(dct)
 first = find_first_read(o_lap)
@@ -111,8 +112,6 @@ dic = {k:v for k, v in o_lap.items() if k == first}
 largest = find_key_for_largest_value(dic)
 #order = find_order(first, o_lap)
 order = re.findall('Rosalind_[0-9]*', str(find_order(first, o_lap)))
-
-print(order)
 assemble_G(order, dct, o_lap)
 
 # print(order)
@@ -121,5 +120,3 @@ assemble_G(order, dct, o_lap)
 # print(o_lap)
 # print(largest)
 # print(prettify_o_lap(o_lap))
-
-
