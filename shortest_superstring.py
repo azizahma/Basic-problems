@@ -92,7 +92,9 @@ o_lap = get_all_o_lap(dct)
 first = find_first_read(o_lap)
 dic = {k:v for k, v in o_lap.items() if k == first} ### mcm ada problem kat sini, tapi patutnya tak, as it wii search local value dulu baru global
 largest = find_key_for_largest_value(dic)
-print(find_order(first, o_lap))
+#order = find_order(first, o_lap)
+order = re.findall('Rosalind_[0-9]*', str(find_order(first, o_lap)))
+print(order)
 
 # print(dct)
 # print(first)
