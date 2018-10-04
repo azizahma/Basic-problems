@@ -45,19 +45,43 @@ def getAllOlap(d):
         o_lap.update(a)
     return o_lap
 
+import pandas as pd
 def prettyPrint(dd):
+    df = pd.DataFrame(o_lap)
+    df = df.fillna('-')
+    return df
+
+#We decide that true overlaps are the ones with an overlap larger than two (>2).
+def findFirstread(dd):
+    a = [[j for i,j in v.items() if j>2] for k,v in dd.items()]
+    a = [ x for x in a if x != []]
+    return a
+    #a = [''.join(map(str,x)) for x in a]
+
+    # a = max([ int(x) for x in a ])
+    #
+    # for k,v in dd.items():
+    #     for i,j in v.items():
+    #         if j == a:
+    #             print(k)
+
+
+
 
 
 
 
 #print(meanLength('rosalind_long.txt'))
 #print(getOlap(left,right))
-o_lap = getAllOlap(read_data_fr_file('rosalind_long.txt'))
-#o_lap = getAllOlap(read_data_fr_file('input'))
-print(o_lap)
-for k,v in o_lap.items():
-    for i,j in v.items():
-        print(k, i)
+#o_lap = getAllOlap(read_data_fr_file('rosalind_long.txt'))
+o_lap = getAllOlap(read_data_fr_file('input'))
+#print(o_lap)
+# for k,v in o_lap.items():
+#     for i,j in v.items():
+#         if j > 200: # meanLength('rosalind_long.txt')/2:
+#             print(k, i, j)
+print(prettyPrint(o_lap))
+print(findFirstread(o_lap))
 
 
 #print(read_data_fr_file('input'))
