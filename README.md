@@ -36,5 +36,6 @@ This repository is for my own reference.
 
 Other interesting problems:
 1. Latest version (of eg. Opera version by directory name) - latestoperaversion.py
+2. Scramble/Unscramble text - jijah_pandai.py
 
 
